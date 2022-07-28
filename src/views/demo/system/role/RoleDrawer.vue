@@ -12,7 +12,7 @@
         <BasicTree
           v-model:value="model[field]"
           :treeData="treeData"
-          :replaceFields="{ title: 'menuName', key: 'id' }"
+          :fieldNames="{ title: 'menuName', key: 'id' }"
           checkable
           toolbar
           title="菜单分配"
@@ -40,6 +40,7 @@
 
       const [registerForm, { resetFields, setFieldsValue, validate }] = useForm({
         labelWidth: 90,
+        baseColProps: { span: 24 },
         schemas: formSchema,
         showActionButtonGroup: false,
       });
